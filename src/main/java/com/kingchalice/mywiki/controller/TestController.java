@@ -12,7 +12,7 @@ public class TestController {
 
     @Value("${test.hello:TEST}")
     private String testHello;
-    
+
     @GetMapping("/hello")
     public String hello() {
         return "Hello World! " + testHello;
