@@ -1,5 +1,6 @@
 package com.kingchalice.mywiki.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 @ComponentScan("com.kingchalice")
 @SpringBootApplication
+@MapperScan("com.kingchalice.mywiki.mapper")
 public class MywikiApplication {
     private static final Logger LOG = LoggerFactory.getLogger(MywikiApplication.class);
 
