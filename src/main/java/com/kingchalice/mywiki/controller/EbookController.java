@@ -1,6 +1,7 @@
 package com.kingchalice.mywiki.controller;
 
 import com.kingchalice.mywiki.domain.Ebook;
+import com.kingchalice.mywiki.resp.CommonResp;
 import com.kingchalice.mywiki.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +23,10 @@ public class EbookController {
 
 
     @GetMapping("/list")
-    public List<Ebook> list() {
-
-        return ebookService.list();
+    public CommonResp list() {
+        CommonResp<List<Ebook>> resp = new CommonResp<>();
+        List<Ebook> list = ebookService.list();
+        resp.setContent(list);
+        return resp;
     }
 }
